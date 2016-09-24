@@ -1,0 +1,241 @@
+개발환경 설정 jdk-sdk-adt-avd
+-참조 android 6.0버전은 jdk_8.0 설치
+
+1. java se 8 설치 (jdk)
+
+2. android studio (adk-adt-avd 통합 eclips 도 통합됨)
+
+3. avd 안드로이드 내장 외 번들 genymotion 3rd party 제품사용(성능및 기능구현상 나음)
+
+* application의 종류
+1. native app : 계산기, 시계등
+2. web app : m.naver.com등
+3. hybrid app : 카톡등
+
+* 지니모션에 가상장치 생성
+-> 윈도우기반에 올라온상태임
+
+* 현재 가상디바이스는 생성상태로 android studio 에 연결해야 되는 상태임
+
+안드로이드스튜디오에 shotcut이용
+1) 설정 : cas - Ctrl + Alt + s
+
+-java는 hierarchy(계층구조)로 구성된다.
+
+사용한 인스턴스변수
+EditText et_num_1,et_num_2;
+Button bt_cal_1,bt_cal_2,bt_cal_3,bt_cal_4,bt_cal_5,bt_cal_6;
+TextView tv_1;
+
+git add --all 또는 git add .
+git commit -m "first commit"
+git 
+
+
+git hub command 창 입력
+echo "# app160924" >> README.md
+git init
+git add README.md
+git remote add origin https://github.com/cosmos94/app160924.git
+git config --global user.email "k10461@naver.com"
+git config --global user.name "cosmos94"
+git commit -m "first commit"
+git remote add origin https://github.com/cosmos94/app160924.git
+git push -u origin master
+git add .
+git status
+git commit -m "first commit"
+git push -u origin master
+
+
+-------- 실제 출력 윈도우 ------------
+1027@hb1010 MINGW64 /c/test/software/App160924
+$ echo "# app160924" >> README.md
+
+1027@hb1010 MINGW64 /c/test/software/App160924
+$ git init
+Initialized empty Git repository in C:/test/software/App160924/.git/
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git add README.md
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory.
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git commit -m "first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <(null)>) not allowed
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git remote add origin https://github.com/cosmos94/app160924.git
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ ^C
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git config --global user.email "k10461@naver.com"
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git config --global user.name "cosmos94"
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git commit -m "first commit"
+[master (root-commit) 2399505] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git remote add origin https://github.com/cosmos94/app160924.git
+fatal: remote origin already exists.
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 217 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/cosmos94/app160924.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ ^C
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$  git add .
+warning: LF will be replaced by CRLF in .idea/compiler.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in .idea/gradle.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in .idea/misc.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in .idea/modules.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in .idea/runConfigurations.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in gradle/wrapper/gradle-wrapper.properties.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in gradlew.
+The file will have its original line endings in your working directory.
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .gitignore
+        new file:   .idea/compiler.xml
+        new file:   .idea/copyright/profiles_settings.xml
+        new file:   .idea/gradle.xml
+        new file:   .idea/misc.xml
+        new file:   .idea/modules.xml
+        new file:   .idea/runConfigurations.xml
+        new file:   app/.gitignore
+        new file:   app/build.gradle
+        new file:   app/proguard-rules.pro
+        new file:   app/src/androidTest/java/com/example/a1027/app160924/ExampleInstrumentedTest.java
+        new file:   app/src/main/AndroidManifest.xml
+        new file:   app/src/main/java/com/example/a1027/app160924/CalcActivity.java
+        new file:   app/src/main/java/com/example/a1027/app160924/MainActivity.java
+        new file:   app/src/main/res/layout/activity_calc.xml
+        new file:   app/src/main/res/layout/activity_main.xml
+        new file:   app/src/main/res/mipmap-hdpi/ic_launcher.png
+        new file:   app/src/main/res/mipmap-mdpi/ic_launcher.png
+        new file:   app/src/main/res/mipmap-xhdpi/ic_launcher.png
+        new file:   app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+        new file:   app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+        new file:   app/src/main/res/values-w820dp/dimens.xml
+        new file:   app/src/main/res/values/colors.xml
+        new file:   app/src/main/res/values/dimens.xml
+        new file:   app/src/main/res/values/strings.xml
+        new file:   app/src/main/res/values/styles.xml
+        new file:   app/src/test/java/com/example/a1027/app160924/ExampleUnitTest.java
+        new file:   build.gradle
+        new file:   gradle.properties
+        new file:   gradle/wrapper/gradle-wrapper.jar
+        new file:   gradle/wrapper/gradle-wrapper.properties
+        new file:   gradlew
+        new file:   gradlew.bat
+        new file:   settings.gradle
+
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git comit -m "first commit"
+git: 'comit' is not a git command. See 'git --help'.
+
+Did you mean this?
+        commit
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git commit -m "first commit"
+[master 4525759] first commit
+ 34 files changed, 772 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .idea/compiler.xml
+ create mode 100644 .idea/copyright/profiles_settings.xml
+ create mode 100644 .idea/gradle.xml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/runConfigurations.xml
+ create mode 100644 app/.gitignore
+ create mode 100644 app/build.gradle
+ create mode 100644 app/proguard-rules.pro
+ create mode 100644 app/src/androidTest/java/com/example/a1027/app160924/ExampleInstrumentedTest.java
+ create mode 100644 app/src/main/AndroidManifest.xml
+ create mode 100644 app/src/main/java/com/example/a1027/app160924/CalcActivity.java
+ create mode 100644 app/src/main/java/com/example/a1027/app160924/MainActivity.java
+ create mode 100644 app/src/main/res/layout/activity_calc.xml
+ create mode 100644 app/src/main/res/layout/activity_main.xml
+ create mode 100644 app/src/main/res/mipmap-hdpi/ic_launcher.png
+ create mode 100644 app/src/main/res/mipmap-mdpi/ic_launcher.png
+ create mode 100644 app/src/main/res/mipmap-xhdpi/ic_launcher.png
+ create mode 100644 app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+ create mode 100644 app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+ create mode 100644 app/src/main/res/values-w820dp/dimens.xml
+ create mode 100644 app/src/main/res/values/colors.xml
+ create mode 100644 app/src/main/res/values/dimens.xml
+ create mode 100644 app/src/main/res/values/strings.xml
+ create mode 100644 app/src/main/res/values/styles.xml
+ create mode 100644 app/src/test/java/com/example/a1027/app160924/ExampleUnitTest.java
+ create mode 100644 build.gradle
+ create mode 100644 gradle.properties
+ create mode 100644 gradle/wrapper/gradle-wrapper.jar
+ create mode 100644 gradle/wrapper/gradle-wrapper.properties
+ create mode 100644 gradlew
+ create mode 100644 gradlew.bat
+ create mode 100644 settings.gradle
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git pushgit push
+git: 'pushgit' is not a git command. See 'git --help'.
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git push
+Counting objects: 69, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (44/44), done.
+Writing objects: 100% (69/69), 87.78 KiB | 0 bytes/s, done.
+Total 69 (delta 0), reused 0 (delta 0)
+To https://github.com/cosmos94/app160924.git
+   2399505..4525759  master -> master
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git push -u origin master
+Branch master set up to track remote branch master from origin.
+Everything up-to-date
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)
+$ git^C
+
+1027@hb1010 MINGW64 /c/test/software/App160924 (master)

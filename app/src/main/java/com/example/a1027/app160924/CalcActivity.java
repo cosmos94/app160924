@@ -26,6 +26,9 @@ public class CalcActivity extends AppCompatActivity implements View.OnClickListe
     TextView tv_1;
     int result;
 
+    CalcService service = new CalcServiceImpl();
+    CalcDTO cal = new CalcDTO();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,20 +59,29 @@ public class CalcActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        //원 표현
+        //       String s = et_num_1.getText().toString();
+        //       int num1 = Integer.parseInt (s);
+//일반
         //지역변수 선언
-        int num1 = Integer.parseInt (et_num_1.getText().toString());
+//        int num1 = Integer.parseInt (et_num_1.getText().toString());
         //텍스트 박스에서 가져온 스트링을 정수로 변경
-        int num2 = Integer.parseInt (et_num_2.getText().toString());
-   //원 표현
- //       String s = et_num_1.getText().toString();
- //       int num1 = Integer.parseInt (s);
+//        int num2 = Integer.parseInt (et_num_2.getText().toString());
+
+//은닉화
+        cal.setNum1(num1);
+        cal.setNum2(num2);
 
         switch(v.getId()){
             // 가져올때 get 내보낼때 set
             case R.id.bt_cal_1 :
-                result = num1 + num2;
+//                result = num1 + num2;     //일반 코딩방식
+//                cal = service.plus(cal);    //java 식 코딩 (암호화)
+//              result = cal.getResult();
+                result = service.plus(cal).getResult();
                 break;  // +
             case R.id.bt_cal_2 :
+                cal = service.minus(cal);
                 result = num1 - num2;
                 break;  // -
             case R.id.bt_cal_3 :
@@ -82,8 +94,8 @@ public class CalcActivity extends AppCompatActivity implements View.OnClickListe
                 result = num1 % num2;
                 break;  // %
             case R.id.bt_cal_6 :
-//                tv_1.setText(result);
-                tv_1.setText("결과 :" + result);
+                tv_1.setText("결과값 : "+ result);
+//                tv_1.setTextAppearance(result);
                 break;  // =
         }
     }
