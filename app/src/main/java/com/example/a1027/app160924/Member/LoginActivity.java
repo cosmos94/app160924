@@ -1,5 +1,6 @@
 package com.example.a1027.app160924.Member;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,12 +13,13 @@ import com.example.a1027.app160924.R;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     Button bt_login,bt_join;
     EditText et_id,et_pw;
-    MemberService service = new MemberServiceImpl();    // MemberServiceImpl의 변수 로딩
+    MemberService service;    // MemberServiceImpl의 변수 로딩
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        service = new MemberServiceImpl(this.getApplicationContext());
 
         bt_login = (Button) findViewById(R.id.bt_login);
         bt_join = (Button) findViewById(R.id.bt_join);
@@ -63,6 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 break;
             case R.id.bt_join:
+                startActivity(new Intent(LoginActivity.this, JoinActivity.class));
                 break;
         }
 

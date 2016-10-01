@@ -1,14 +1,29 @@
 package com.example.a1027.app160924.Member;
 
+import android.content.Context;
 import android.util.Log;
+
+import com.example.a1027.app160924.util.Retval;
 
 /**
  * Created by 1027 on 2016-10-01.
  */
 
 public class MemberServiceImpl implements MemberService{
-    MemberDAO dao = new MemberDAO();
+/*    MemberDAO dao = new MemberDAO();
+//db 생성을 위해 컨스트럭터를 생성 하기 루틴으로 분할
 
+    MemberDAO dao;
+
+    public MemberServiceImpl(MemberDAO dao) {
+        this.dao = dao;
+    }
+*/
+    MemberDAO dao;
+
+    public MemberServiceImpl(Context context) {
+        this.dao = new MemberDAO(context);
+    }
     @Override
     public MemberDTO login(MemberDTO param) {
         Log.i(">> SERVICE 받은 id : ",param.getId());
@@ -33,7 +48,22 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public MemberDTO join(MemberDTO param) {
-        return null;
+/*    public MemberDTO join(MemberDTO param) {
+        Log.i("** SERVICE 받은 id : ",param.getId());
+        Log.i("** SERVICE 받은 pw : ",param.getPw());
+        Log.i("** SERVICE 받은 name : ",param.getPw());
+        Log.i("** SERVICE 받은 email : ",param.getPw());
+        Log.i("** SERVICE 받은 addr : ",param.getPw());
+        Log.i("** SERVICE 받은 phone : ",param.getPw());
+        return dao.insert(param);
+    }*/
+    public Retval join(MemberDTO param) {
+        Log.i("** SERVICE 받은 id : ",param.getId());
+        Log.i("** SERVICE 받은 pw : ",param.getPw());
+        Log.i("** SERVICE 받은 name : ",param.getPw());
+        Log.i("** SERVICE 받은 email : ",param.getPw());
+        Log.i("** SERVICE 받은 addr : ",param.getPw());
+        Log.i("** SERVICE 받은 phone : ",param.getPw());
+        return dao.insert(param);
     }
 }
