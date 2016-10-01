@@ -17,9 +17,14 @@
         android:textColor="#134"
         android:layout_weight="0.34" />
     <Button
+        android:id="@+id/bt_calc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CALC"/>
-
+        android:text="Calc"/>
+    <Button
+        android:id="@+id/bt_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contacts"/>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.a1027.app160924;
+package com.example.a1027.app160924.Calcurator;
 
 /**
  * Created by 1027 on 2016-09-24.
@@ -6,27 +6,29 @@ package com.example.a1027.app160924;
 
 public class CalcDTO {
     //은닉화
-    private int cal;
+    private int num1, num2, result;
 
     public int getNum1() {
-        return cal;
+        return num1;
     }
 
-    public CalcDTO(int num1) {
-        this.cal = cal;
+    public void setNum1(int num1) {
+        this.num1 = num1;
     }
 
     public int getNum2() {
         return num2;
     }
 
+    public void setNum2(int num2) {
+        this.num2 = num2;
+    }
+
     public int getResult() {
         return result;
     }
 
-    public CalcDTO(int num1, int num2, int result) {
-        this.num1 = num1;
-        this.num2 = num2;
+    public void setResult(int result) {
         this.result = result;
     }
 }
