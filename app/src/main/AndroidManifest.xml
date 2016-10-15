@@ -34,7 +34,8 @@
         </activity>
         -->
         <activity android:name=".Member.LoginActivity" />
-        <activity android:name=".Member.JoinActivity"></activity>
+        <activity android:name=".Member.JoinActivity" />
+        <activity android:name=".Member.ListActivity"></activity>
     </application>
 
 </manifest>

@@ -7,8 +7,109 @@ git push -u origine master
 
 EditText et_id,et_pw,et_name,et_email,et_addr,et_phone
 
+
+10/15
+
 SQLITE 명령어
 adb devices
 adb shell
 cd /data/data/{프로젝트풀네임}
 cd /data/data/com.example.a1027.app160924/
+
+
+sqlite3 ./hanbitdb
+
+adb shell
+cd /data/data/com.example.a1027.app160924/databases
+sqlite3 ./testDB3
+
+웹서비스 완성조건
+www-> html5 ( html5 + css3 + javascript )
+
+web server -> was + app-server (톰캣 무료)
+db-server -> oracle, mysql, mariadb, mongodb..
+
+앱서비스완성하기위한 조건
+
+LTE, wifi등
+android ( web 서버개념 ) -> java xml
+sqlite3 (db서버 개념) -> query ( structured query language )
+
+1. 객체지행언어 (1995~)
+OOP - Object Oriented Programming language )
+-> class(설계, 구조)가 존재하고 class를 통해 instance(객체_를 생성한다)
+
+
+2. 절차 지향언어 (1970~)
+-Procedure, function위주 언어
+-대표언어 : c, excel(배크로)
+
+3. 구조 질의 언어 (1975~)
+-  sql
+- 대표언어 : Oracle, Ansi-sql
+
+DDL : 정의
+DML : 조작
+DCL : 권한
+
+DDL ( 정의어 )
+- CREATE TABLE 생성
+- drop table 삭제
+
+DML( DATABASE 조작어)
+4가지 형태로 패턴화 됨
+CRUD
+Create instance => insert table
+Read instance => select from
+Updata instance => updata set
+Delete instance => delete from
+
+table -> java의 class에 대응 (구조)
+instabce -> instance : Member m = new Member(); 생성되는 현존하는 구조
+
+java에서 활용 table 생성
+public class Member{
+	private String id,pw,name,email,addr,phone,profileImg;
+}
+	private-> 접근 제한 oop의 영역
+
+sql에서 table 생성
+create table member(	-> table에서 대표하는 key가 필요
+	id text primary key,	-> primary key 지정
+	pw text
+	name text,
+	email text,
+	addr text,
+	phone text,
+	profileImg text
+);
+
+create table if not exists member( 재생성 확인 -> table에서 대표하는 key가 필요
+	id text primary key,	-> primary key 지정
+	pw text
+	name text,
+	email text,
+	addr text,
+	phone text,
+	profileImg text
+);
+
+
+.table // 테이블 보기
+select * from member; // 전체 멤버 호출
+select count(*) from member; //전체멤버 수 카운트
+
+insert into member(id,pw,name,email,addr,phone,profileImg);
+values ('hong6','1','홍길동','hong5@a.a','Seoul','010-1111-1111','기본.jpg');
+
+select * from member where id = 'hong1';
+
+update member set name = 'gildong' where id = 'hong3';
+
+update member set 
+pw = '2' 
+email = '3',
+addr = '4',
+profileimg ='5',
+
+where id = 'hong3';

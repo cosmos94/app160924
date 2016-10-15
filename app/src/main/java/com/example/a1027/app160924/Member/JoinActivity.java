@@ -6,11 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.a1027.app160924.MainActivity;
 import com.example.a1027.app160924.R;
-import com.example.a1027.app160924.util.Retval;
 
 public class JoinActivity extends AppCompatActivity implements View.OnClickListener{
     Button bt_submit,bt_cancel;
@@ -67,9 +65,9 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.bt_submit:
-                Retval val = service.join(member);
-                if(val.getMessage().equals("SUCCESS"))
-                {
+                service.regist(member);
+                /* 1015 리턴이 없으므로 삭제
+                if(val.getMessage().equals("SUCCESS")){
                     Toast.makeText(JoinActivity.this,
                             "회원가입에 성공하였습니다. 로그인하여주십시요",
                             Toast.LENGTH_LONG).show();
@@ -79,7 +77,8 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(JoinActivity.this,
                         "회원가입에 실패하였습니다. 다시 시도하여주십시요",
                         Toast.LENGTH_LONG).show();
-                }
+                }*/
+                startActivity(new Intent(JoinActivity.this, LoginActivity.class));
                 break;
             case R.id.bt_cancel:
                 startActivity(new Intent(JoinActivity.this, MainActivity.class));
